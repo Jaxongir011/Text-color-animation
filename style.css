@@ -1,0 +1,32 @@
+.page {
+    display: grid;
+    min-height: 100vh;
+  }
+  .page__txt {
+    margin: auto;
+  }
+  
+  .txt {
+    color: transparent;
+    display: flex;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: clamp(3rem, 13vw, 10rem);
+    text-transform: uppercase;
+  }
+  .txt__character {
+    animation: fall 2s linear infinite;
+    animation-delay: calc(var(--i) * 200ms);
+    transform: translateY(-100%);
+  }
+  
+  @keyframes fall {
+    50%, 80% {
+      color: hsl(calc(var(--i) * 25), 100%, 50%);
+      transform: translateY(0);
+      opacity: 1;
+    }
+    95%, 100% {
+      opacity: 0;
+    }
+  }
